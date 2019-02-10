@@ -18,9 +18,9 @@ let id = 2;
 
 // Action Creators (액션함수 정의)
 export const inputChage = createAction(INPUT_CHANGE, text => text);
-export const updateTodo = createAction(UPDATE_TODO, updateInput => ({
-  updateInput,
-  id
+export const updateTodo = createAction(UPDATE_TODO, (id, updateInput) => ({
+  id,
+  updateInput
 }));
 export const postTodo = createAction(POST_TODO, text => ({
   text,

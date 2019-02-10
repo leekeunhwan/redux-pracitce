@@ -1,9 +1,6 @@
 import React, { Component, Fragment } from "react";
 
 export default class TodoList extends Component {
-  componentDidMount() {
-    console.log(this.props);
-  }
   render() {
     const {
       input,
@@ -63,7 +60,7 @@ export default class TodoList extends Component {
                 value={updateInput}
                 onChange={onUpdateInputChange}
               />
-              <button className="btns" onClick={onUpdateTodo}>
+              <button className="btns" onClick={() => onUpdateTodo(item.id)}>
                 수정완료
               </button>
             </div>

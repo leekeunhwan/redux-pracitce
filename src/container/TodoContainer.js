@@ -18,9 +18,9 @@ class TodoContainer extends Component {
     WaitingActions.inputChage("");
   };
 
-  handleUpdateTodo = () => {
+  handleUpdateTodo = id => {
     const { WaitingActions, updateInput } = this.props;
-    WaitingActions.updateTodo(updateInput);
+    WaitingActions.updateTodo(id, updateInput);
     WaitingActions.udpateInputChange("");
   };
 
