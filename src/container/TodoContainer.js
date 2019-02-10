@@ -3,45 +3,45 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import TodoList from "../component/Todo";
-import * as waitingActions from "../store/modules/todo";
+import * as todoActions from "../store/modules/todo";
 
 class TodoContainer extends Component {
   handleInputChange = e => {
-    const { WaitingActions } = this.props;
-    WaitingActions.inputChage(e.target.value);
+    const { TodoActions } = this.props;
+    TodoActions.inputChage(e.target.value);
   };
 
   handlePostTodo = e => {
     e.preventDefault();
-    const { WaitingActions, input } = this.props;
-    WaitingActions.postTodo(input);
-    WaitingActions.inputChage("");
+    const { TodoActions, input } = this.props;
+    TodoActions.postTodo(input);
+    TodoActions.inputChage("");
   };
 
   handleUpdateTodo = id => {
-    const { WaitingActions, updateInput } = this.props;
-    WaitingActions.updateTodo(id, updateInput);
-    WaitingActions.udpateInputChange("");
+    const { TodoActions, updateInput } = this.props;
+    TodoActions.updateTodo(id, updateInput);
+    TodoActions.udpateInputChange("");
   };
 
   handleDeleteTodo = id => {
-    const { WaitingActions } = this.props;
-    WaitingActions.deleteTodo(id);
+    const { TodoActions } = this.props;
+    TodoActions.deleteTodo(id);
   };
 
   handleCompleteTodo = id => {
-    const { WaitingActions } = this.props;
-    WaitingActions.completeTodo(id);
+    const { TodoActions } = this.props;
+    TodoActions.completeTodo(id);
   };
 
   handleUpdateTodoToggle = id => {
-    const { WaitingActions } = this.props;
-    WaitingActions.updateTodoToggle(id);
+    const { TodoActions } = this.props;
+    TodoActions.updateTodoToggle(id);
   };
 
   handleUpdateInputChange = e => {
-    const { WaitingActions } = this.props;
-    WaitingActions.udpateInputChange(e.target.value);
+    const { TodoActions } = this.props;
+    TodoActions.udpateInputChange(e.target.value);
   };
 
   render() {
@@ -70,7 +70,7 @@ const mapStateToProps = ({ todo }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  WaitingActions: bindActionCreators(waitingActions, dispatch)
+  TodoActions: bindActionCreators(todoActions, dispatch)
 });
 
 export default connect(
